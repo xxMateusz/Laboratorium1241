@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Post
+
+<h2>Edycja Postu</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Content">Zawartość</label>
+        <input class="form-control" asp-for="Content" />
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Author">Autor</label>
+        <input class="form-control" asp-for="Author" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="PublicationDate">Data Publikacji</label>
+        <input class="form-control" asp-for="PublicationDate" />
+    </div>
+    <div>
+        <label asp-for="Tags">Tagi</label>
+        <input class="form-control" asp-for="Tags" />
+    </div>
+    <div>
+        <label asp-for="Comment">Komentarz</label>
+        <textarea class="form-control" asp-for="Comment"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Anuluj</a>

@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Post
+
+<form asp-action="Create" asp-controller="Post" method="post">
+    <div asp-validation-summary="All"></div>
+
+
+    <div>
+        <label asp-for="Content">Zawartość</label>
+        <input class="form-control" type="text" asp-for="Content" />
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Author">Autor</label>
+        <input class="form-control" type="text" asp-for="Author" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="PublicationDate">Data publikacji</label>
+        <input class="form-control" type="date" asp-for="PublicationDate" />
+    </div>
+    <div>
+        <label asp-for="Tags">Tagi</label>
+        <input class="form-control" type="text" asp-for="Tags" />
+    </div>
+    <div>
+        <label asp-for="Comment">Komentarz</label>
+        <textarea class="form-control" asp-for="Comment"></textarea>
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+    <select asp-for="Status" asp-items="@Html.GetEnumSelectList<PostStatus>()" class="form-control"></select>
+
+  
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+</form>

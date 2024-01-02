@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Post
+
+<h2>Szczegóły Postu</h2>
+
+<div>
+    <h3>@Model.Author</h3>
+    <p>@Model.Content</p>
+    <p><strong>Data Publikacji:</strong> @Model.PublicationDate.ToString("d")</p>
+    <p><strong>Tagi:</strong> @Model.Tags</p>
+    <p><strong>Komentarz:</strong> @Model.Comment</p>
+    <p><strong>Status:</strong> @Model.Status</p>
+</div>
+
+<a asp-action="Index" class="btn btn-primary">Powrót do listy</a>
